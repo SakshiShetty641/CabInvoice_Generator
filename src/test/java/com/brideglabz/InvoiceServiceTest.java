@@ -13,4 +13,14 @@ public class InvoiceServiceTest {
         double fair = invoiceGenerator.calculateFair(distance, time);
         Assertions.assertEquals(25, fair);
     }
+
+    @Test
+    public void givenLessDistanceAndTime_ShouldReturnTotalFare() {
+        InvoiceGenerator invoiceGenerator = new InvoiceGenerator();
+        double distance = 1.0;
+        int time = 5;
+        double fair = invoiceGenerator.calculateFair(distance, time);
+        Assertions.assertEquals(15, fair);
+    }
+
 }
